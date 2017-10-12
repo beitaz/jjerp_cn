@@ -41,15 +41,16 @@ gem 'figaro'
 gem 'paper_trail'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'pry'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'annotate'
-  gem 'rubocop'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capybara', '~> 2.13'
+  gem 'faker'
   gem 'overcommit'
+  gem 'pry'
+  gem 'rubocop'
+  gem 'selenium-webdriver'
 end
 
 group :development do

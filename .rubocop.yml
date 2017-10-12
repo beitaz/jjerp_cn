@@ -1,5 +1,9 @@
 inherit_from: .rubocop_todo.yml
 
+AllCops:
+  Exclude:
+    - 'test/*'
+
 Style/Documentation:
   Enabled: false
 
@@ -16,4 +20,6 @@ Metrics/AbcSize:
   Max: 20
 
 Metrics/BlockLength:
+  Exclude:
+    - 'db/schema.rb'
   Max: 30

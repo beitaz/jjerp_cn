@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_171_011_084_223) do
+ActiveRecord::Schema.define(version: 20_171_012_041_545) do
   create_table 'users', force: :cascade, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
     t.string 'email', default: '', null: false
     t.string 'encrypted_password', default: '', null: false
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 20_171_011_084_223) do
     t.datetime 'confirmation_sent_at'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.string 'username', null: false, comment: '用户名'
+    t.string 'phone', comment: '电话'
+    t.integer 'category', default: 1, comment: '用户种类'
+    t.string 'avatar', comment: '头像'
+    t.boolean 'deleted'
     t.index ['confirmation_token'], name: 'index_users_on_confirmation_token', unique: true
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
