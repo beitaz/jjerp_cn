@@ -1,26 +1,49 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="login-box">
+  <div class="login-logo">
+    <a href="<%= root_path %>">
+      <b>生产管理系统</b>
+    </a>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="login-box-body">
+    <p class="login-box-msg">登录系统</p>
+    
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
+    <%= devise_error_messages! %>
+    
+    <div class="field form-group">
+      <%= f.label :email, '邮箱', class: 'control-label col-xs-3' %>
+        <div class="col-xs-9">
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: '请输入邮箱' %>
+        </div>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="field form-group">
+      <%= f.label :password, '密码', class: 'control-label col-xs-3' %>
+        <div class="col-xs-9">
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: '请输入密码' %>
+        </div>
+    </div>
+
+    <div class="field form-group">
+      <div class="col-xs-3 text-right">
+        <div class="links">
+        <small>
+          <%= link_to '找回密码', new_password_path(resource_name) %>
+        </small>
+        </div>
+      </div>
+      <div class="col-xs-5">
+        <% if devise_mapping.rememberable? -%>
+          <div class="links">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, '记住登录状态' %>
+          </div>
+          <% end -%>
+      </div>
+      <div class="col-xs-4">
+        <%= f.submit '登录', class: 'btn btn-primary btn-block btn-flat' %>
+      </div>
+    </div>
+    <% end %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

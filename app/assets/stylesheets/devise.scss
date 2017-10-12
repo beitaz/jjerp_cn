@@ -1,9 +1,21 @@
-.register-box {
-  .register-box-body {
-    form .form-group {
-      .links {
-        margin: 7px 0;
-      }
+.register-box,
+.login-box {
+    .register-box-body,
+    .login-box-body {
+        form .form-group {
+            .links {
+                margin: 7px 0;
+                label {
+                    margin: 0px;
+                }
+                a {
+                    // underline 无法调整文字与下划线的距离
+                    // text-decoration: underline;
+                    margin-right: 3px;
+                    padding-bottom: 2px;
+                    border-bottom: 1px solid #337ab7;
+                }
+            }
+        }
     }
-  }
 }
