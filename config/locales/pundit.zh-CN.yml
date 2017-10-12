@@ -1,0 +1,8 @@
+zh-CN:
+  pundit:
+    default: '没有访问权限。'
+    user_policy:
+      index?: '没有『用户列表』访问权限。'
+      show?: '没有『此用户』访问权限。'
+      update?: '没有『此用户』编辑权限。'
+      create?: '没有『用户』创建权限。'

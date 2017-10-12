@@ -2,10 +2,7 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   Exclude:
-    - 'test/*'
-
-Style/Documentation:
-  Enabled: false
+    - 'test/**/*.rb'
 
 Style/AsciiComments:
   Enabled: false
@@ -13,8 +10,11 @@ Style/AsciiComments:
 Style/ClassAndModuleChildren:
   Enabled: false
 
-Metrics/MethodLength:
-  Max: 20
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
 
 Metrics/AbcSize:
   Max: 20
@@ -23,3 +23,6 @@ Metrics/BlockLength:
   Exclude:
     - 'db/schema.rb'
   Max: 30
+
+Metrics/MethodLength:
+  Max: 20

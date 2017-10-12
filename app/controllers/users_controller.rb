@@ -5,11 +5,14 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    authorize @users
   end
 
   # GET /users/1
   # GET /users/1.json
-  def show; end
+  def show
+    authorize @user
+  end
 
   # GET /users/new
   def new
