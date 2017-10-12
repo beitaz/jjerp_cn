@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resource :users
+  resources :users
   get 'static/index'
   get 'static/home'
   get 'static/about'
