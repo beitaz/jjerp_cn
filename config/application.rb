@@ -15,6 +15,11 @@ module JjerpCn
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # config.i18n.enforce_available_locales = false
+    config.i18n.load_path += Dir[Rails.root.join('lib', 'locale', '**', '*.{rb,yml}')]
+    config.i18n.available_locales = [:en, 'zh-CN']
+    config.i18n.default_locale = 'zh-CN'
+
     config.generators do |g|
       g.assets false
       g.jbuilder false

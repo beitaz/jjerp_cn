@@ -30,6 +30,8 @@ Layout/SpaceInsideBrackets:
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
 Metrics/LineLength:
+  Exclude:
+    - 'config/initializers/devise.rb'
   Max: 130
 
 # Offense count: 1
