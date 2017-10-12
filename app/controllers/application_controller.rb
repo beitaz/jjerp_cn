@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def responsive_layout
-    (controller_name == 'static' && action_name != 'home') || devise_controller? ? 'full' : 'part'
+    if current_user
+      'part'
+    else
+      'full'
+    end
   end
 
   def configure_permitted_parameters
