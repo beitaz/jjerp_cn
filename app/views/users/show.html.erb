@@ -1,4 +1,31 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+<div class="box box-solid">
+  <div class="box-header with-border">
+    <h3 class="box-title">个人信息</h3>
+  </div>
+
+  <div class="box-body">
+    <dl class="dl-horizontal">
+      <dt>Avatar</dt>
+      <dd><%= image_tag @user.avatar.url(:thumb) %></dd>
+      <dt>UserName</dt>
+      <dd><%= @user.username %></dd>
+      <dt>Email</dt>
+      <dd><%= @user.email %></dd>
+      <dt>Phone</dt>
+      <dd><%= @user.phone %></dd>
+      <dt>Category</dt>
+      <dd><%= @user.category %></dd>
+    </dl>
+  </div>
+  <div class="box-footer">
+    <div class="col-xs-offset-4 col-xs-4">
+      <%= link_to '返回', users_path, class: 'btn btn-default btn-block btn-flat' %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to '编辑', edit_user_path(@user), class: 'btn btn-primary btn-block btn-flat' %>
+    </div>
+  </div>
+</div>

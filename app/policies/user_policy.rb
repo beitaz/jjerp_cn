@@ -1,10 +1,18 @@
 class UserPolicy < ApplicationPolicy
   def index?
-    user.email == 'root@qq.com'
+    user.admin?
   end
 
   def show?
-    false
+    user.admin? || user.id == record.id
+  end
+
+  def edit?
+    this.show?
+  end
+
+  def update?
+    this.show?
   end
 
   class Scope < Scope

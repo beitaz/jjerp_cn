@@ -17,6 +17,9 @@ Style/Documentation:
 Style/EmptyMethod:
   Enabled: false
 
+Style/RegexpLiteral:
+  Enabled: false
+
 Metrics/AbcSize:
   Max: 20
 

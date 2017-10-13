@@ -25,15 +25,22 @@
 #
 
 class User < ApplicationRecord
+  has_attached_file :avatar, styles: { medium: '300x300#', thumb: '100x100#' }
+  validates_attachment :avatar, content_type: { content_type: /\Aimage\/.*\z/ }, less_than: 1.megabytes
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  before_save :complete
+  before_save :auto_complete
+
+  def admin?
+    category.zero?
+  end
 
   private
 
-  def complete
+  def auto_complete
     self.username ||= Faker::Name.unique.name
     self.phone ||= Faker::PhoneNumber.unique.phone_number
   end
