@@ -1,72 +1,26 @@
-<%= form_with(model: factory, local: true) do |form| %>
-  <% if factory.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(factory.errors.count, "error") %> prohibited this factory from being saved:</h2>
-
-      <ul>
-      <% factory.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="box box-solid">
+  <div class="box-body">
+    <%= simple_form_for(@factory, html: { class: 'form-horizontal'}, wrapper: :horizontal_form ) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :name, required: true %>
+    <%= f.input :uid %>
+    <%= f.input :phone %>
+    <%= f.input :contacter %>
+    <%= f.input :telephone %>
+    <%= f.input :expired_at, as: :datetime, use_two_digit_numbers: true , start_year: Date.today.year, order: [:year, :month, :day], wrapper: :horizontal_radio_and_checkboxes %>
+    <%= f.input :deleted, wrapper: :horizontal_radio_and_checkboxes %>
+    <%= f.input :province %>
+    <%= f.input :city %>
+    <%= f.input :county %>
+    <%= f.input :address %>
+  </div>
+  <div class="form-actions box-footer">
+    <div class="col-xs-offset-4 col-xs-4">
+      <%= link_to '返回', factories_path, class: 'btn btn-default btn-block btn-flat' %>
     </div>
+    <div class="col-xs-4">
+      <%= f.button :submit, class: 'btn btn-primary btn-block btn-flat' %>
+    </div>
+  </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :factory_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :uid %>
-    <%= form.text_field :uid, id: :factory_uid %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :factory_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contacter %>
-    <%= form.text_field :contacter, id: :factory_contacter %>
-  </div>
-
-  <div class="field">
-    <%= form.label :telephone %>
-    <%= form.text_field :telephone, id: :factory_telephone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :expired_at %>
-    <%= form.datetime_select :expired_at, id: :factory_expired_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :deleted %>
-    <%= form.check_box :deleted, id: :factory_deleted %>
-  </div>
-
-  <div class="field">
-    <%= form.label :province %>
-    <%= form.text_field :province, id: :factory_province %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :factory_city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :county %>
-    <%= form.text_field :county, id: :factory_county %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :factory_address %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

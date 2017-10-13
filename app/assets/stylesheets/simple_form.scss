@@ -1,0 +1,15 @@
+.form-horizontal {
+    .form-group {
+        label {
+            &.boolean,
+            &.date,
+            &.datetime,
+            &.file {
+                padding-top: 0px;
+            }
+        }
+        input[type='file'] {
+            font-size: 12px;
+        }
+    }
+}
