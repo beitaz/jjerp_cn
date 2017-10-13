@@ -26,6 +26,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
     - 'db/schema.rb'
+    - 'config/initializers/*.rb'
   Max: 30
 
 Metrics/MethodLength:
