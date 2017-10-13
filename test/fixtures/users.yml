@@ -21,7 +21,6 @@
 #  username               :string(255)      not null
 #  phone                  :string(255)
 #  category               :integer          default(1)
-#  avatar                 :string(255)
 #  deleted                :boolean
 #
 

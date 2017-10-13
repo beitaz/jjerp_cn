@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20_171_012_041_545) do
     t.string 'username', null: false, comment: '用户名'
     t.string 'phone', comment: '电话'
     t.integer 'category', default: 1, comment: '用户种类'
-    t.string 'avatar', comment: '头像'
     t.boolean 'deleted'
     t.index ['confirmation_token'], name: 'index_users_on_confirmation_token', unique: true
     t.index ['email'], name: 'index_users_on_email', unique: true
