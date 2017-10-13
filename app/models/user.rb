@@ -22,9 +22,14 @@
 #  phone                  :string(255)
 #  category               :integer          default(1)
 #  deleted                :boolean
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 
 class User < ApplicationRecord
+  belongs_to :factory
   has_attached_file :avatar, styles: { medium: '300x300#', thumb: '100x100#' }
   validates_attachment :avatar, content_type: { content_type: /\Aimage\/.*\z/ }, less_than: 1.megabytes
 

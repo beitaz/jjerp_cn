@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Factories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Uid</th>
+      <th>Phone</th>
+      <th>Contacter</th>
+      <th>Telephone</th>
+      <th>Expired at</th>
+      <th>Deleted</th>
+      <th>Province</th>
+      <th>City</th>
+      <th>County</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @factories.each do |factory| %>
+      <tr>
+        <td><%= factory.name %></td>
+        <td><%= factory.uid %></td>
+        <td><%= factory.phone %></td>
+        <td><%= factory.contacter %></td>
+        <td><%= factory.telephone %></td>
+        <td><%= factory.expired_at %></td>
+        <td><%= factory.deleted %></td>
+        <td><%= factory.province %></td>
+        <td><%= factory.city %></td>
+        <td><%= factory.county %></td>
+        <td><%= factory.address %></td>
+        <td><%= link_to 'Show', factory %></td>
+        <td><%= link_to 'Edit', edit_factory_path(factory) %></td>
+        <td><%= link_to 'Destroy', factory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Factory', new_factory_path %>

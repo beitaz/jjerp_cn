@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :factories
   devise_for :users
   resources :users
   get 'static/index'

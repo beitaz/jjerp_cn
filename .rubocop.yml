@@ -30,3 +30,9 @@ Metrics/BlockLength:
 
 Metrics/MethodLength:
   Max: 20
+
+Metrics/LineLength:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'config/initializers/devise.rb'
