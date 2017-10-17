@@ -1,6 +1,6 @@
-class CreateFactories < ActiveRecord::Migration[5.1]
+class CreateCompanies < ActiveRecord::Migration[5.1]
   def change
-    create_table :factories do |t|
+    create_table :companies do |t|
       t.string :name, comment: '工厂名称'
       t.string :uid, null: false, comment: '编号'
       t.string :phone, comment: '电话'
@@ -16,7 +16,7 @@ class CreateFactories < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_index :factories, :uid, unique: true
-    add_index :factories, :phone, unique: true
+    add_index :companies, :uid, unique: true
+    add_index :companies, :phone, unique: true
   end
 end

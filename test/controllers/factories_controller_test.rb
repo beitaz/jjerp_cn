@@ -1,48 +1,48 @@
 require 'test_helper'
 
-class FactoriesControllerTest < ActionDispatch::IntegrationTest
+class CompaniesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @factory = factories(:one)
+    @company = companies(:one)
   end
 
-  test "should get index" do
-    get factories_url
+  test 'should get index' do
+    get companies_url
     assert_response :success
   end
 
-  test "should get new" do
-    get new_factory_url
+  test 'should get new' do
+    get new_company_url
     assert_response :success
   end
 
-  test "should create factory" do
-    assert_difference('Factory.count') do
-      post factories_url, params: { factory: { address: @factory.address, city: @factory.city, contacter: @factory.contacter, county: @factory.county, deleted: @factory.deleted, expired_at: @factory.expired_at, name: @factory.name, phone: @factory.phone, province: @factory.province, telephone: @factory.telephone, uid: @factory.uid } }
+  test 'should create company' do
+    assert_difference('Company.count') do
+      post companies_url, params: { company: { address: @company.address, city: @company.city, contacter: @company.contacter, county: @company.county, deleted: @company.deleted, expired_at: @company.expired_at, name: @company.name, phone: @company.phone, province: @company.province, telephone: @company.telephone, uid: @company.uid } }
     end
 
-    assert_redirected_to factory_url(Factory.last)
+    assert_redirected_to company_url(Company.last)
   end
 
-  test "should show factory" do
-    get factory_url(@factory)
+  test 'should show company' do
+    get company_url(@company)
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_factory_url(@factory)
+  test 'should get edit' do
+    get edit_company_url(@company)
     assert_response :success
   end
 
-  test "should update factory" do
-    patch factory_url(@factory), params: { factory: { address: @factory.address, city: @factory.city, contacter: @factory.contacter, county: @factory.county, deleted: @factory.deleted, expired_at: @factory.expired_at, name: @factory.name, phone: @factory.phone, province: @factory.province, telephone: @factory.telephone, uid: @factory.uid } }
-    assert_redirected_to factory_url(@factory)
+  test 'should update company' do
+    patch company_url(@company), params: { company: { address: @company.address, city: @company.city, contacter: @company.contacter, county: @company.county, deleted: @company.deleted, expired_at: @company.expired_at, name: @company.name, phone: @company.phone, province: @company.province, telephone: @company.telephone, uid: @company.uid } }
+    assert_redirected_to company_url(@company)
   end
 
-  test "should destroy factory" do
-    assert_difference('Factory.count', -1) do
-      delete factory_url(@factory)
+  test 'should destroy company' do
+    assert_difference('Company.count', -1) do
+      delete company_url(@company)
     end
 
-    assert_redirected_to factories_url
+    assert_redirected_to companies_url
   end
 end

@@ -33,26 +33,26 @@
       </thead>
 
       <tbody>
-        <% @factories.each do |factory| %>
+        <% @companies.each do |company| %>
           <tr>
-            <td><%= factory.name %></td>
-            <td><%= factory.uid %></td>
-            <td><%= factory.phone %></td>
-            <td><%= factory.contacter %></td>
-            <td><%= factory.telephone %></td>
-            <td><%= factory.expired_at %></td>
-            <td><%= factory.deleted %></td>
-            <td><%= factory.province %></td>
-            <td><%= factory.city %></td>
-            <td><%= factory.county %></td>
-            <td><%= factory.address %></td>
-            <td><%= link_to 'Show', factory %></td>
-            <td><%= link_to 'Edit', edit_factory_path(factory) %></td>
-            <td><%= link_to 'Destroy', factory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= company.name %></td>
+            <td><%= company.uid %></td>
+            <td><%= company.phone %></td>
+            <td><%= company.contacter %></td>
+            <td><%= company.telephone %></td>
+            <td><%= company.expired_at %></td>
+            <td><%= company.deleted %></td>
+            <td><%= company.province %></td>
+            <td><%= company.city %></td>
+            <td><%= company.county %></td>
+            <td><%= company.address %></td>
+            <td><%= link_to 'Show', company %></td>
+            <td><%= link_to 'Edit', edit_company_path(company) %></td>
+            <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 </div>
-<%= link_to 'New Factory', new_factory_path %>
+<%= link_to 'New Company', new_company_path %>
