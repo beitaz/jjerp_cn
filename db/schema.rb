@@ -48,14 +48,12 @@ ActiveRecord::Schema.define(version: 20171013085141) do
     t.datetime "updated_at", null: false
     t.string "username", null: false, comment: "用户名"
     t.string "phone", comment: "电话"
-    t.integer "category", default: 1, comment: "用户种类"
+    t.integer "category", comment: "用户种类"
     t.boolean "deleted"
-    t.bigint "company_id"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

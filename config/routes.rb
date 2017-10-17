@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   resources :companies
   devise_for :users
-  resources :users
+  resources :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    confirmations: 'users/confirmations',
+    passwords: 'users/passwords',
+    mailer: 'users/mailer',
+    unlocks: 'users/unlocks'
+  }
   get 'static/index'
   get 'static/home'
   get 'static/about'
