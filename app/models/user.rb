@@ -29,7 +29,7 @@
 #
 
 class User < ApplicationRecord
-  enum category: [:normal, :company]
+  enum category: [:admin, :normal, :company]
   has_attached_file :avatar, styles: { medium: '300x300#', thumb: '100x100#' }
   validates_attachment :avatar, content_type: { content_type: /\Aimage\/.*\z/ }, less_than: 1.megabytes
 
@@ -40,10 +40,6 @@ class User < ApplicationRecord
   before_save :auto_complete
   after_initialize :set_default_category
 
-  def admin?
-    category.zero?
-  end
-
   private
 
   def auto_complete
@@ -52,6 +48,11 @@ class User < ApplicationRecord
   end
 
   def set_default_category
-    self.category ||= :normal
+    # if User.any?
+    #   self.category ||= :normal
+    # else
+    #   self.category = :admin unless User.any?
+    # end
+    self.category ||= User.any? ? :normal : :admin
   end
 end
