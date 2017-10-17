@@ -1,18 +1,9 @@
 <div class="box box-solid">
+  <div class="box-header with-border">
+    <h3 class="box-title">个人设置</h3>
+  </div>
+  <%= simple_form_for(@user, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
   <div class="box-body">
-    <%= simple_form_for(@user, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
-    <% if user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-        <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <%= f.error_notification %>
     <%= f.input :avatar, as: :file, wrapper: :horizontal_file_input %>
     <%= f.input :email %>
