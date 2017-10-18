@@ -5,10 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-company = Company.new(name: '伊思尔', uid: '1'.rjust(10, '0'))
+company = Company.new(name: 'yy', uid: '1'.rjust(10, '0'))
 company.save!
 puts 'Company created !' if company.persisted?
 
-admin = User.new(email: 'admin@qq.com', password: '123abc..', username: 'admin', phone: '18888888888')
+# User.transaction do
+admin = User.new(email: 'admin@qq.com', password: '123abc..', username: 'admin', phone: '19999999999')
 admin.save!
+normal = User.new(email: 'normal@qq.com', password: '123abc..', username: 'normal', phone: '16666666666')
+normal.save!
+boss = User.new(email: 'boss@qq.com', password: '123abc..', username: 'boss', phone: '18888888888', category: User.categories[:company])
+boss.save!
+# end
 puts 'Admin created.' if admin.persisted?
