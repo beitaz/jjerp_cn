@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @board.name %>
+</p>
+
+<p>
+  <strong>Cname:</strong>
+  <%= @board.cname %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @board.uid %>
+</p>
+
+<p>
+  <strong>Ply:</strong>
+  <%= @board.ply %>
+</p>
+
+<p>
+  <strong>Texture:</strong>
+  <%= @board.texture %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @board.color %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @board.price %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @board.stock %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @board.note %>
+</p>
+
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>

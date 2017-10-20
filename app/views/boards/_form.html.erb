@@ -1,0 +1,25 @@
+<div class="box box-solid">
+<%= simple_form_for(@board, wrapper: :horizontal_form) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs box-body">
+    <%= f.input :name %>
+    <%= f.input :cname %>
+    <%= f.input :uid %>
+    <%= f.input :ply %>
+    <%= f.input :texture %>
+    <%= f.input :color %>
+    <%= f.input :price %>
+    <%= f.input :stock %>
+    <%= f.input :note %>
+  </div>
+
+  <div class="form-actions box-footer">
+    <div class="col-xs-offset-4 col-xs-4">
+      <%= link_to '返回', boards_path, class: 'btn btn-default btn-block btn-flat' %>
+    </div>
+    <div class="col-xs-4">
+      <%= f.button :submit, class: 'btn btn-primary btn-block btn-flat' %>
+    </div>
+  </div>
+<% end %>

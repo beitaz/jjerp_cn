@@ -3,7 +3,15 @@ class StaticController < ApplicationController
   skip_after_action :verify_authorized
   def index; end
 
-  def home; end
+  def home
+    @user = current_user
+    render 'users/show'
+  end
+
+  def profile
+    @user = current_user
+    render 'users/edit'
+  end
 
   def about; end
 

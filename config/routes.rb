@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :boards
   resources :companies
-  devise_for :users
-  resources :users, controllers: {
+  devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
     confirmations: 'users/confirmations',
@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     mailer: 'users/mailer',
     unlocks: 'users/unlocks'
   }
+  resources :users
   get 'static/index'
-  get 'static/home'
+  get 'home', to: 'static#home'
+  get 'profile', to: 'static#profile'
   get 'static/about'
   get 'static/contact'
   root 'static#index'

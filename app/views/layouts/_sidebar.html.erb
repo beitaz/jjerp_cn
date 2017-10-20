@@ -5,15 +5,15 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu tree" data-widget="tree">
-      <li>
-        <a href="<%= user_path(current_user) %>">
+      <li class="<%= 'active' if 'static' == controller_name && 'home' == action_name %>">
+        <a href="<%= home_path %>">
           <i class="fa fa-home"></i>
           <span>系统首页</span>
         </a>
       </li>
 
-      <li>
-        <a href="<%= edit_user_path(current_user) %>">
+      <li class="<%= 'active' if 'static' == controller_name && 'profile' == action_name %>">
+        <a href="<%= profile_path %>">
           <i class="fa fa-user"></i>
           <span>个人设置</span>
         </a>
@@ -29,12 +29,12 @@
         </a>
         <ul class="treeview-menu">
           <li>
-            <a href="javascript: void(0);">
+            <a href="#">
               <span>部件</span>
             </a>
           </li>
-          <li>
-            <a href="javascript: void(0);">
+          <li class="<%= 'active' if 'boards' == controller_name && ['index', 'edit', 'show'].include?(action_name) %>">
+            <a href="<%= boards_path %>">
               <i class="fa fa-link"></i>
               <span>板料</span>
             </a>
@@ -46,7 +46,7 @@
       </li>
 
       <li class="treeview">
-        <a href="javascript: void(0);">
+        <a href="#">
           <i class="fa fa-calculator"></i>
           <span>财务系统</span>
           <span class="pull-right-container">
@@ -64,7 +64,7 @@
       </li>
       
       <li class="treeview">
-        <a href="javascript: void(0);">
+        <a href="#">
           <i class="fa fa-briefcase"></i>
           <span>订单</span>
           <span class="pull-right-container">
@@ -96,8 +96,8 @@
         </ul>
       </li>
 
-      <li class="treeview bg-red <%= 'active' if controller_name == 'users' %>">
-        <a href="javascript: void(0);">
+      <li class="treeview bg-red">
+        <a href="#">
           <i class="fa fa-cog" style="color:#FFF;"></i>
           <span style="color: #FFF;">系统设置</span>
           <span class="pull-right-container">
@@ -105,10 +105,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li>
+          <li class="<%= 'active' if controller_name == 'users' && ['index', 'edit', 'show'].include?(action_name) %>">
             <a href="<%= users_path %>">用户管理</a>
           </li>
-          <li>
+          <li class="<%= 'active' if controller_name == 'companies' && ['index', 'show', 'new', 'edit'].include?(action_name) %>">
             <a href="<%= companies_path %>">公司列表</a>
           </li>
         </ul>
