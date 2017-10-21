@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020073159) do
+ActiveRecord::Schema.define(version: 20171021044546) do
 
   create_table "boards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20171020073159) do
     t.decimal "price", precision: 8, scale: 2
     t.integer "stock"
     t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "cname"
+    t.string "uid"
+    t.boolean "deleted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +51,66 @@ ActiveRecord::Schema.define(version: 20171020073159) do
     t.datetime "updated_at", null: false
     t.index ["phone"], name: "index_companies_on_phone", unique: true
     t.index ["uid"], name: "index_companies_on_uid", unique: true
+  end
+
+  create_table "components", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "cname"
+    t.string "uid"
+    t.decimal "price", precision: 8, scale: 2
+    t.string "desc"
+    t.string "note"
+    t.boolean "deleted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "crafts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "cname"
+    t.string "uid"
+    t.string "uom"
+    t.decimal "price", precision: 8, scale: 2
+    t.string "desc"
+    t.string "note"
+    t.boolean "deleted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "expends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "reason"
+    t.decimal "amount", precision: 8, scale: 2
+    t.string "creator"
+    t.string "note"
+    t.boolean "deleted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "incomes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "origin"
+    t.string "origin_id"
+    t.string "target"
+    t.decimal "amount", precision: 8, scale: 2
+    t.string "creator"
+    t.string "note"
+    t.boolean "deleted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "cname"
+    t.string "uid"
+    t.string "uom"
+    t.decimal "price", precision: 8, scale: 2
+    t.string "desc"
+    t.string "note"
+    t.boolean "deleted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

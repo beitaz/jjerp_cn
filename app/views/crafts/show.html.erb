@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @craft.name %>
+</p>
+
+<p>
+  <strong>Cname:</strong>
+  <%= @craft.cname %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @craft.uid %>
+</p>
+
+<p>
+  <strong>Uom:</strong>
+  <%= @craft.uom %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @craft.price %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @craft.desc %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @craft.note %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @craft.deleted %>
+</p>
+
+<%= link_to 'Edit', edit_craft_path(@craft) %> |
+<%= link_to 'Back', crafts_path %>

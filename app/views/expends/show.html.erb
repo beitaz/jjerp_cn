@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @expend.reason %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @expend.amount %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @expend.creator %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @expend.note %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @expend.deleted %>
+</p>
+
+<%= link_to 'Edit', edit_expend_path(@expend) %> |
+<%= link_to 'Back', expends_path %>

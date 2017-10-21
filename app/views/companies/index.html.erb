@@ -7,7 +7,9 @@
         <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
         <div class="input-group-btn">
-          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+          <button type="submit" class="btn btn-default">
+            <i class="fa fa-search"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -35,22 +37,50 @@
       <tbody>
         <% @companies.each do |company| %>
           <tr>
-            <td><%= company.name %></td>
-            <td><%= company.uid %></td>
-            <td><%= company.phone %></td>
-            <td><%= company.contacter %></td>
-            <td><%= company.telephone %></td>
-            <td><%= company.expired_at %></td>
-            <td><%= company.deleted %></td>
-            <td><%= company.province %></td>
-            <td><%= company.city %></td>
-            <td><%= company.county %></td>
-            <td><%= company.address %></td>
-            <td><%= link_to 'Show', company %></td>
-            <td><%= link_to 'Edit', edit_company_path(company) %></td>
-            <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+              <%= company.name %>
+            </td>
+            <td>
+              <%= company.uid %>
+            </td>
+            <td>
+              <%= company.phone %>
+            </td>
+            <td>
+              <%= company.contacter %>
+            </td>
+            <td>
+              <%= company.telephone %>
+            </td>
+            <td>
+              <%= company.expired_at %>
+            </td>
+            <td>
+              <%= company.deleted %>
+            </td>
+            <td>
+              <%= company.province %>
+            </td>
+            <td>
+              <%= company.city %>
+            </td>
+            <td>
+              <%= company.county %>
+            </td>
+            <td>
+              <%= company.address %>
+            </td>
+            <td>
+              <%= link_to 'Show', company %>
+            </td>
+            <td>
+              <%= link_to 'Edit', edit_company_path(company) %>
+            </td>
+            <td>
+              <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
           </tr>
-        <% end %>
+          <% end %>
       </tbody>
     </table>
   </div>

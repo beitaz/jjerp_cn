@@ -5,22 +5,22 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu tree" data-widget="tree">
-      <li class="<%= 'active' if 'static' == controller_name && 'home' == action_name %>">
+      <li class="<%#= 'active' if 'static' == controller_name && 'home' == action_name %>">
         <a href="<%= home_path %>">
           <i class="fa fa-home"></i>
           <span>系统首页</span>
         </a>
       </li>
 
-      <li class="<%= 'active' if 'static' == controller_name && 'profile' == action_name %>">
+      <li class="<%#= 'active' if 'static' == controller_name && 'profile' == action_name %>">
         <a href="<%= profile_path %>">
           <i class="fa fa-user"></i>
           <span>个人设置</span>
         </a>
       </li>
 
-      <li class="treeview">
-        <a href="javascript: void(0);">
+      <li class="treeview <%= 'active menu-open' if ['components', 'boards', 'parts', 'crafts'].include?(controller_name) %>">
+        <a href="#">
           <i class="fa fa-cogs"></i>
           <span>生产资料</span>
           <span class="pull-right-container">
@@ -28,24 +28,34 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li>
-            <a href="#">
-              <span>部件</span>
+          <li class="<%= 'active' if 'components' == controller_name %>">
+            <a href="<%= components_path %>">
+              <i class="fa fa-link"></i>
+              <span>组件</span>
             </a>
           </li>
-          <li class="<%= 'active' if 'boards' == controller_name && ['index', 'edit', 'show'].include?(action_name) %>">
+          <li class="<%= 'active' if 'boards' == controller_name %>">
             <a href="<%= boards_path %>">
               <i class="fa fa-link"></i>
               <span>板料</span>
             </a>
           </li>
-          <li>
-            <a href="javascript: void(0);">配件</a>
+          <li class="<%= 'active' if 'parts' == controller_name %>">
+            <a href="<%= parts_path %>">
+              <i class="fa fa-link"></i>
+              <span>配件</span>
+            </a>
+          </li>
+          <li class="<%= 'active' if 'crafts' == controller_name %>">
+            <a href="<%= crafts_path %>">
+            <i class="fa fa-link"></i>
+              <span>工艺</span>
+            </a>
           </li>
         </ul>
       </li>
 
-      <li class="treeview">
+      <li class="treeview <%= 'active menu-open' if ['incomes', 'expends'].include?(controller_name) %>">
         <a href="#">
           <i class="fa fa-calculator"></i>
           <span>财务系统</span>
@@ -54,11 +64,11 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li>
-            <a href="javascript: void(0);">收入</a>
+          <li class="<%= 'active' if 'incomes' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
+            <a href="<%= incomes_path %>">收入</a>
           </li>
-          <li>
-            <a href="javascript: void(0);">支出</a>
+          <li class="<%= 'active' if 'expends' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
+            <a href="<%= expends_path %>">支出</a>
           </li>
         </ul>
       </li>
@@ -73,30 +83,30 @@
         </a>
         <ul class="treeview-menu">
           <li>
-            <a href="javascript: void(0);">列表</a>
+            <a href="#">列表</a>
           </li>
           <li>
-            <a href="javascript: void(0);">下单</a>
+            <a href="#">下单</a>
           </li>
           <li>
-            <a href="javascript: void(0);">生产中</a>
+            <a href="#">生产中</a>
           </li>
           <li>
-            <a href="javascript: void(0);">已入库</a>
+            <a href="#">已入库</a>
           </li>
           <li>
-            <a href="javascript: void(0);">发货</a>
+            <a href="#">发货</a>
           </li>
           <li>
-            <a href="javascript: void(0);">已发货</a>
+            <a href="#">已发货</a>
           </li>
           <li>
-            <a href="javascript: void(0);">已完成</a>
+            <a href="#">已完成</a>
           </li>
         </ul>
       </li>
 
-      <li class="treeview bg-red">
+      <li class="treeview bg-red <%= 'active menu-open' if ['users', 'companies', 'categories'].include?(controller_name) %>">
         <a href="#">
           <i class="fa fa-cog" style="color:#FFF;"></i>
           <span style="color: #FFF;">系统设置</span>
@@ -105,11 +115,14 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="<%= 'active' if controller_name == 'users' && ['index', 'edit', 'show'].include?(action_name) %>">
+          <li class="<%= 'active' if 'users' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
             <a href="<%= users_path %>">用户管理</a>
           </li>
-          <li class="<%= 'active' if controller_name == 'companies' && ['index', 'show', 'new', 'edit'].include?(action_name) %>">
+          <li class="<%= 'active' if 'companies' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
             <a href="<%= companies_path %>">公司列表</a>
+          </li>
+          <li class="<%= 'active' if 'categories' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
+            <a href="<%= categories_path %>">类型列表</a>
           </li>
         </ul>
       </li>

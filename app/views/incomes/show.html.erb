@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @income.origin %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @income.origin_id %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @income.target %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @income.amount %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @income.creator %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @income.note %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @income.deleted %>
+</p>
+
+<%= link_to 'Edit', edit_income_path(@income) %> |
+<%= link_to 'Back', incomes_path %>

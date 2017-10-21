@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @component.name %>
+</p>
+
+<p>
+  <strong>Cname:</strong>
+  <%= @component.cname %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @component.uid %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @component.price %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @component.desc %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @component.note %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @component.deleted %>
+</p>
+
+<%= link_to 'Edit', edit_component_path(@component) %> |
+<%= link_to 'Back', components_path %>

@@ -32,6 +32,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_in_path_for(_resource_or_scope)
+    home_path
+  end
+
+  def after_sign_out_path_for(_resource_or_scope)
+    root_path
+  end
+
   private
 
   def forget_invoke_authorize(exception)

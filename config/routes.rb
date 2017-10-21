@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :expends
+  resources :incomes
+  resources :categories
+  resources :parts
+  resources :crafts
+  resources :components
   resources :boards
   resources :companies
   devise_for :users, controllers: {
