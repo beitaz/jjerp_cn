@@ -1,10 +1,18 @@
 aside.main-sidebar {
   section.sidebar {
     ul.sidebar-menu {
-      li.bg-red {
-        & i,
-        & span {
-          color: #fff;
+      li {
+        &>a:hover {
+          background: #bcbaf7;
+        }
+        &.menu-open>a {
+          color: #FFF;
+          background: #8f8fd8;
+        }
+        &.active>a,
+        & ul.treeview-menu li.active {
+          background: #605ca8;
+          color: #FFF;
         }
       }
     }

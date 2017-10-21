@@ -5,14 +5,14 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu tree" data-widget="tree">
-      <li class="<%#= 'active' if 'static' == controller_name && 'home' == action_name %>">
+      <li class="<%= 'active' if 'static' == controller_name && 'home' == action_name %>">
         <a href="<%= home_path %>">
           <i class="fa fa-home"></i>
           <span>系统首页</span>
         </a>
       </li>
 
-      <li class="<%#= 'active' if 'static' == controller_name && 'profile' == action_name %>">
+      <li class="<%= 'active' if 'static' == controller_name && 'profile' == action_name %>">
         <a href="<%= profile_path %>">
           <i class="fa fa-user"></i>
           <span>个人设置</span>
@@ -106,10 +106,10 @@
         </ul>
       </li>
 
-      <li class="treeview bg-red <%= 'active menu-open' if ['users', 'companies', 'categories'].include?(controller_name) %>">
+      <li class="treeview <%= 'active menu-open' if ['users', 'companies', 'categories'].include?(controller_name) %>">
         <a href="#">
-          <i class="fa fa-cog" style="color:#FFF;"></i>
-          <span style="color: #FFF;">系统设置</span>
+          <i class="fa fa-cog"></i>
+          <span>系统设置</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>

@@ -1,0 +1,8 @@
+zh-CN:
+  helpers:
+    submit:
+      new: '新建'
+      create: '新建'
+      edit: '编辑'
+      update: '更新'
+      delete: '删除'
