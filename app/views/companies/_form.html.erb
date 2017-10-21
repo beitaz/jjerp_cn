@@ -3,16 +3,18 @@
   <%= f.error_notification %>
   <div class="box-body">
     <%= f.input :name, required: true, autofocus: true %>
+    <%= f.input :cname %>
     <%= f.input :uid %>
     <%= f.input :phone %>
     <%= f.input :contacter %>
     <%= f.input :telephone %>
     <%= f.input :expired_at, as: :datetime, use_two_digit_numbers: true , start_year: Date.today.year, order: [:year, :month, :day], wrapper: :horizontal_radio_and_checkboxes %>
-    <%= f.input :deleted, wrapper: :horizontal_radio_and_checkboxes %>
     <%= f.input :province %>
     <%= f.input :city %>
     <%= f.input :county %>
     <%= f.input :address %>
+    <%= f.input :note %>
+    <%= f.input :deleted, wrapper: :horizontal_radio_and_checkboxes %>
   </div>
   <div class="form-actions box-footer">
     <div class="col-xs-offset-4 col-xs-4">

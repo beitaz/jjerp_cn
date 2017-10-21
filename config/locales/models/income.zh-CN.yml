@@ -1,0 +1,17 @@
+zh-CN:
+  activerecord:
+    models:
+      income: '收入'
+    attributes:
+      income:
+        origin: '来源'
+        origin_id: '来源编号'
+        target: '目标'
+        amount: '数额'
+        creator: '负责人'
+        note: '备注'
+        deleted: '删除'
+    errors:
+      models:
+        income:
+          attributes:

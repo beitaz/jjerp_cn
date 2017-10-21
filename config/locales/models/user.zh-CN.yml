@@ -1,13 +1,16 @@
----
 zh-CN:
   activerecord:
     models:
       user: '用户'
     attributes:
-      email: '邮箱'
-      password: '密码'
-      password_confirmation: '确认密码'
-      category: '用户类型'
+      user:
+        email: '邮箱'
+        username: '用户名'
+        password: '密码'
+        password_confirmation: '确认密码'
+        phone: '电话'
+        avatar: '头像'
+        category: '用户类型'
     errors:
       models:
         user:

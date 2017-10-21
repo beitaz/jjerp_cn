@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    models:
+      category: '类型'
+    attributes:
+      category:
+        name: '名称'
+        cname: '编号'
+        uid: '编码'
+        note: '备注'
+        deleted: '删除'
+    errors:
+      models:
+        category:
+          attributes:

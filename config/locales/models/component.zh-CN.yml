@@ -1,0 +1,17 @@
+zh-CN:
+  activerecord:
+    models:
+      component: '组件'
+    attributes:
+      component:
+        name: '名称'
+        cname: '编号'
+        uid: '编码'
+        price: '单价'
+        desc: '描述'
+        note: '备注'
+        deleted: '删除'
+    errors:
+      models:
+        component:
+          attributes:

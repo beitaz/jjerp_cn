@@ -20,7 +20,7 @@
 #  updated_at             :datetime         not null
 #  username               :string(255)      not null
 #  phone                  :string(255)
-#  category               :integer          default(1)
+#  category               :integer
 #  deleted                :boolean
 #  avatar_file_name       :string(255)
 #  avatar_content_type    :string(255)

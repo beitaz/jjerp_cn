@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    models:
+      expend: '支出'
+    attributes:
+      expend:
+        reason: '原由'
+        amount: '数额'
+        creator: '负责人'
+        note: '备注'
+        deleted: '删除'
+    errors:
+      models:
+        expend:
+          attributes:

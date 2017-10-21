@@ -1,0 +1,21 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      board: '板料'
+    attributes:
+      board:
+        name: '名称'
+        cname: '编号'
+        uid: '编码'
+        ply: '厚度'
+        texture: '材质'
+        color: '颜色'
+        price: '单价'
+        stock: '库存'
+        note: '备注'
+        deleted: '删除'
+    errors:
+      models:
+        board:
+          attributes:

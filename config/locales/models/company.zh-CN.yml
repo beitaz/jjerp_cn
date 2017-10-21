@@ -1,0 +1,23 @@
+zh-CN:
+  activerecord:
+    models:
+      company: '公司'
+    attributes:
+      company:
+        name: '名称'
+        cname: '编号'
+        uid: '编码'
+        phone: '电话'
+        contacter: '联系人'
+        telephone: '联系人电话'
+        expired_at: '有效期'
+        province: '省份'
+        city: '城市'
+        county: '区县'
+        address: '地址'
+        note: '备注'
+        deleted: '删除'
+    errors:
+      models:
+        company:
+          attributes:

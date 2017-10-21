@@ -1,0 +1,18 @@
+zh-CN:
+  activerecord:
+    models:
+      part: '板料'
+    attributes:
+      part:
+        name: '名称'
+        cname: '编号'
+        uid: '编码'
+        uom: '单位'
+        price: '单价'
+        desc: '描述'
+        note: '备注'
+        deleted: '删除'
+    errors:
+      models:
+        part:
+          attributes:
