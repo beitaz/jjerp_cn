@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   resources :expends
   resources :incomes
@@ -21,6 +23,9 @@ Rails.application.routes.draw do
   get 'profile', to: 'static#profile'
   get 'static/about'
   get 'static/contact'
+  get 'tasks', to: 'static#tasks'
+  get 'static/dbdump'
+  mount Sidekiq::Web => '/sidekiq'
   root 'static#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,19 +1,24 @@
-.form-horizontal {
+.simple_form {
+  .required>abbr {
+    color: red;
+  }
+  .form-horizontal {
     .form-group {
-        label {
-            &.boolean,
-            &.date,
-            &.datetime,
-            &.file {
-                padding-top: 0px;
-            }
+      label {
+        &.boolean,
+        &.date,
+        &.datetime,
+        &.file {
+          padding-top: 0px;
         }
-        input[type='file'] {
-            font-size: 12px;
-        }
-        span.radio {
-            display: inline-block;
-            padding-right: 7px;
-        }
+      }
+      input[type='file'] {
+        font-size: 12px;
+      }
+      span.radio {
+        display: inline-block;
+        padding-right: 7px;
+      }
     }
+  }
 }

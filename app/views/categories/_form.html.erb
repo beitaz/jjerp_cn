@@ -2,13 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, required: true %>
     <%= f.input :cname %>
-    <%= f.input :uid %>
+    <%= f.input :uid, disabled: true %>
     <%= f.input :deleted %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="actions form-group">
+    <div class="col-xs-offset-4 col-xs-4">
+      <%= link_to '返回', categories_path, class: 'btn btn-default btn-block btn-flat' %>
+    </div>
+    <div class="col-xs-4">
+      <%= f.submit '提交', class: 'btn btn-primary btn-block btn-flat' %>
+    </div>
   </div>
 <% end %>

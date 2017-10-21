@@ -16,4 +16,13 @@ class StaticController < ApplicationController
   def about; end
 
   def contact; end
+
+  def tasks
+    @tasks = []
+  end
+
+  def dbdump
+    DumpWorker.perform_async
+    render 'static/tasks'
+  end
 end

@@ -6,3 +6,6 @@ zh-CN:
       edit: '编辑'
       update: '更新'
       delete: '删除'
+  simple_form:
+    required:
+      text: '必须填写'

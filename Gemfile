@@ -41,6 +41,8 @@ gem 'simple_form'
 gem 'figaro'
 gem 'paper_trail'
 gem 'paperclip', '~> 5.1.0'
+# gem 'backup'
+gem 'sidekiq'
 
 group :development, :test do
   # Adds support for Capybara system testing and selenium driver

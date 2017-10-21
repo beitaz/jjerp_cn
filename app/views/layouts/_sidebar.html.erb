@@ -31,25 +31,25 @@
           <li class="<%= 'active' if 'components' == controller_name %>">
             <a href="<%= components_path %>">
               <i class="fa fa-link"></i>
-              <span>组件</span>
+              <span>组件管理</span>
             </a>
           </li>
           <li class="<%= 'active' if 'boards' == controller_name %>">
             <a href="<%= boards_path %>">
               <i class="fa fa-link"></i>
-              <span>板料</span>
+              <span>板料管理</span>
             </a>
           </li>
           <li class="<%= 'active' if 'parts' == controller_name %>">
             <a href="<%= parts_path %>">
               <i class="fa fa-link"></i>
-              <span>配件</span>
+              <span>配件管理</span>
             </a>
           </li>
           <li class="<%= 'active' if 'crafts' == controller_name %>">
             <a href="<%= crafts_path %>">
             <i class="fa fa-link"></i>
-              <span>工艺</span>
+              <span>工艺管理</span>
             </a>
           </li>
         </ul>
@@ -65,10 +65,10 @@
         </a>
         <ul class="treeview-menu">
           <li class="<%= 'active' if 'incomes' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
-            <a href="<%= incomes_path %>">收入</a>
+            <a href="<%= incomes_path %>">收入列表</a>
           </li>
           <li class="<%= 'active' if 'expends' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
-            <a href="<%= expends_path %>">支出</a>
+            <a href="<%= expends_path %>">支出列表</a>
           </li>
         </ul>
       </li>
@@ -106,7 +106,8 @@
         </ul>
       </li>
 
-      <li class="treeview <%= 'active menu-open' if ['users', 'companies', 'categories'].include?(controller_name) %>">
+      <%#= binding.pry %>
+      <li class="treeview <%= 'active menu-open' if ['users', 'companies', 'categories'].include?(controller_name) || ['tasks'].include?(action_name) %>">
         <a href="#">
           <i class="fa fa-cog"></i>
           <span>系统设置</span>
@@ -121,8 +122,11 @@
           <li class="<%= 'active' if 'companies' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
             <a href="<%= companies_path %>">公司列表</a>
           </li>
-          <li class="<%= 'active' if 'categories' == controller_name && ['index', 'show', 'edit', 'update'].include?(action_name) %>">
-            <a href="<%= categories_path %>">类型列表</a>
+          <li class="<%= 'active' if 'categories' == controller_name %>">
+            <a href="<%= categories_path %>">类型管理</a>
+          </li>
+          <li class="<%= 'active' if 'static' == controller_name && 'tasks' == action_name %>">
+            <a href="<%= tasks_path %>">任务管理</a>
           </li>
         </ul>
       </li>
